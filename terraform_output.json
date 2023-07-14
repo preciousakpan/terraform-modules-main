@@ -1,0 +1,30 @@
+{
+  "private-ip": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "10.0.1.4",
+      "10.0.2.4"
+    ]
+  },
+  "public-ip": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "4.234.93.186",
+      "4.234.93.208"
+    ]
+  }
+}

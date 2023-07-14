@@ -1,0 +1,44 @@
+---
+- name: Static app deployment
+  hosts: mygroup
+  become: yes
+  tasks:
+    # - name: Read Terraform output
+    #       command: cat terraform_output.json
+    #       register: terraform_output
+
+    #     - name: Set IP address as Ansible variable
+    #       set_fact:
+    #         ip_address: "{{ terraform_output.stdout | from_json | json_query('ip_address') }}"
+
+    #     - name: Display IP address
+    #       debug:
+    #         var: ip_address
+
+    - name: Include IP addresses
+      include_vars:
+        file: test.json
+        name: ip_data
+
+    - name: Print IP address
+      debug:
+        var: ip_data.ip_address
+    # - name: Install software
+    #   apt:
+    #     name: nginx
+    #     update_cache: yes
+      
+    # - name: Git clone
+    #   git:
+    #     repo: 
+    #     dest: /var/www/html/static
+
+    # - name: copy nginx
+    #   copy:
+    #     src: nginx.conf
+    #     dest: /etc/nginx/sites-enabled/default
+
+    # - name: Restart nginx
+    #   service:
+    #     name: nginx
+    #     state: restarted

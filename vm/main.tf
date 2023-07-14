@@ -7,7 +7,7 @@ resource "azurerm_public_ip" "ppip" {
   idle_timeout_in_minutes = 30
 
   tags = {
-    environment = "${var.vm_name}test"
+    environment = "${var.vm_name}-test"
   }
 }
 
@@ -20,7 +20,7 @@ resource "azurerm_network_interface" "nic" {
     name                          = var.ip_name
     subnet_id                     = var.snet_id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = var.pip_id
+    public_ip_address_id          = azurerm_public_ip.ppip.id 
   }
 }
 

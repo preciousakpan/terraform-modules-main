@@ -37,9 +37,6 @@ variable "vm_name" {
     type        = string
 }
 
-variable "pip_id" {
-    type        = string
-}
 
 variable "pip_name" {
     type        = string
