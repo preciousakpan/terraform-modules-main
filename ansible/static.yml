@@ -1,6 +1,6 @@
 ---
 - name: Static app deployment
-  hosts: mygroup
+  hosts: all
   become: yes
   tasks:
     # - name: Read Terraform output

@@ -1,3 +1,0 @@
-[mygroup]
-myhost1 ansible_host={{ ip_data.ip_address }}
-# myhost2 ansible_host={{ ip_data.ip_address }}
